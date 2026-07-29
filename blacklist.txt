@@ -1,0 +1,69 @@
+# akash-miner-blacklist
+# =====================================================================
+# Community-observed tenant addresses exhibiting miner behaviour on
+# Akash Network providers.
+#
+# Format:  akash1<address>    <category>    <window>    <evidence>
+# Columns separated by whitespace, comments start with #, blanks allowed.
+#
+# Categories:
+#   scanner-bot   high-frequency bidders, likely scanning/benchmarking
+#   unknown       auto-detected by production scripts, per-entry evidence
+#                 not preserved (log rotation), but caught by same public
+#                 detection scripts operators can run themselves
+#   cpu-miner     reserved for community submissions with confirmed CPU
+#                 miner evidence
+#   gpu-miner     reserved for community submissions with confirmed GPU
+#                 miner evidence
+#   other         reserved for edge cases (DoS floods, etc.)
+#
+# See README.md for provenance quality disclosure and how to contribute.
+# =====================================================================
+
+# ---------- unknown (auto-detected, evidence not preserved) ----------
+
+akash1e3czp359a4df4rqptpq3f4wxckmh7zjqnvrawv    unknown    pre-2026-04           v9 guide baseline
+akash198dw4jqhauu2ehwhx9krpvt90uyh7kktqdxejk    unknown    pre-2026-04           v9 guide baseline
+akash14f35uwrqpnmhyvzfmc3r3enq6un6vzjr496zjd    unknown    pre-2026-04           v9 guide baseline
+akash1fwj6hf0l4kexxzffh80nv0zelvf68uvqmec6gc    unknown    pre-2026-04           v9 guide baseline
+akash168dukw58qayl7ez3kkss4tmn7ta440admtafdg    unknown    pre-2026-04           v9 guide baseline
+akash1da4nrxgfqc0rday4028065yyyrr2rdrv7l7s8x    unknown    pre-2026-04           v9 guide baseline
+akash1vqr6xghzlpas3u8srap4upm3607d0nx6hurzfq    unknown    pre-2026-04           v9 guide baseline
+akash19tp6w64zvdvdh26pv5lyf4f40llnqthgfy0t48    unknown    pre-2026-04           v9 guide baseline
+akash15uc29tz7l7umw77rh7l5mh90jzq4h8kqc36vu0    unknown    pre-2026-04           v9 guide baseline
+akash1uz2cr5wxtav20anu8e375n9f702d323t5sqtjd    unknown    pre-2026-04           v9 guide baseline
+akash1d382qngr2csekumtf8jtm894m8ckue4jcvfldz    unknown    pre-2026-04           v9 guide baseline
+akash18z0qdt2ys9senwwkkef5hfc8e688num45nczl2    unknown    pre-2026-04           v9 guide baseline
+akash1mw2nql5q06aykpdxedunv20g2u2kxu03vrfrgl    unknown    pre-2026-04           v9 guide baseline
+akash1c5578wdwkx69m7esrcp6r8y0jl7y8x6tpkm2wl    unknown    pre-2026-04           v9 guide baseline
+akash1yq8r2pzl8swmgvuum0hffd9vakyuhd72x8xxvk    unknown    pre-2026-04           v9 guide baseline
+akash19yjv4sksd9jr7wd02l5uf09h9etpd6qfnersyk    unknown    pre-2026-04           v9 guide baseline
+akash1wkv7qzk00kn4tj6summg2t86ehr5tlhymvl5nk    unknown    pre-2026-04           v9 guide baseline
+akash1p66kvdqv0k3grhz3ets9f3pth8qletevlruurs    unknown    pre-2026-04           v9 guide baseline
+akash1h92df94k2g3jgnp4qcd8a2w6p0628ryrrcqevp    unknown    pre-2026-04           v9 guide baseline
+akash1apghunkkp708w2axfs4lczy7aphppxs6qk0sdt    unknown    pre-2026-04           v9 guide baseline
+akash1g0pfudkjxuxc6t9lgl6ql9m7739z9p2cs2s6kw    unknown    2026-04               auto-detected by evict-miners.sh
+akash1yf60uvctdz4mzrl23zfd8d8m38z6dnvygr6qr9    unknown    2026-04               auto-detected by evict-miners.sh
+akash19lyu0wgautd5v42ewjl6wp364cmx5cd8gj0up4    unknown    2026-04               auto-detected by evict-miners.sh
+akash14h6vt0gvn6e0kw9r02e29x37ff8elr662emm9h    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash19knltmlgaq73grmddc3cz0fen097lel57nh0e9    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1c5jnj7uhr3sr38r84alpk2annm2e6s9c4nyxnz    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1eykhg400rdu7mutace7sdkplykq5j4eryl6yj9    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1zum96cju54chc5v9whvgqc4axljpzxwppya23g    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash19s9eqytyshtqx9ycwmdhg44vrz5hxuh94jjlfn    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1m6d0gnlyjsg7vc3g67z4s3ypchg7uvd8zpf209    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1ly24qrnfgwrzq7hujqe33k2gfd0c600cxufjdt    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1e5dgte2ju98c0g9yx3x8p6ntpmfm5t2pf4s0ge    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1fxgtqe6zhyegzx79aq9dlc3nzp7tleq6qye9tx    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash1audrwztu6js03sa6ym5acrwz0ck9pzun0uez8m    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+
+# ---------- scanner-bot (documented evidence) ----------
+
+akash14n4rkmz64rn0tey0r5g07l8q5x0fh2h4hu44kt    scanner-bot    2026-07    auditor-locked scanner, 25 bids/day, requires third-party auditor sig
+akash1ru388sahwp04cayg6vpr7vmu7354uc0t45swuu    scanner-bot    2026-07    high-cap CPU scanner, 22 bids/day, never won
+akash1xqhr3psnpnl4xqcausy4rjzay4lpecl9h3grwr    scanner-bot    2026-07    high-freq 8CPU/8GB/10GB benchmark bidder, 32 bids/day, never won
+
+# =====================================================================
+# End of file
+# 34 unknown + 3 scanner-bot = 37 total unique entries
+# =====================================================================
