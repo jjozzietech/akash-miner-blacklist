@@ -8,8 +8,9 @@
 #
 # Categories:
 #   scanner-bot   high-frequency bidders, likely scanning/benchmarking
-#   unknown       auto-detected by production scripts, per-entry evidence
-#                 not preserved (log rotation), but caught by same public
+#   unknown       auto-detected by production scripts. Evidence cited per
+#                 entry where preserved; earlier entries predate log
+#                 retention, but all were caught by the same public
 #                 detection scripts operators can run themselves
 #   cpu-miner     reserved for community submissions with confirmed CPU
 #                 miner evidence
@@ -20,7 +21,7 @@
 # See README.md for provenance quality disclosure and how to contribute.
 # =====================================================================
 
-# ---------- unknown (auto-detected, evidence not preserved) ----------
+# ---------- unknown (auto-detected) ----------
 
 akash1e3czp359a4df4rqptpq3f4wxckmh7zjqnvrawv    unknown    pre-2026-04           v9 guide baseline
 akash198dw4jqhauu2ehwhx9krpvt90uyh7kktqdxejk    unknown    pre-2026-04           v9 guide baseline
@@ -56,6 +57,8 @@ akash1ly24qrnfgwrzq7hujqe33k2gfd0c600cxufjdt    unknown    2026-05-to-2026-07   
 akash1e5dgte2ju98c0g9yx3x8p6ntpmfm5t2pf4s0ge    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
 akash1fxgtqe6zhyegzx79aq9dlc3nzp7tleq6qye9tx    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
 akash1audrwztu6js03sa6ym5acrwz0ck9pzun0uez8m    unknown    2026-05-to-2026-07    auto-detected by evict-miners.sh
+akash16u5txm67jqaejxssdd43wc4kmvlxf3v6yuns35    unknown    2026-09               auto-detected 2026-09-28, dseq 28826768, re-detected on same dseq 5 min after first eviction
+akash15tr98kj972sec8tx8a3tvennsp09yk66vj40ye    unknown    2026-09               auto-detected 2026-09-29, dseq 28837880
 
 # ---------- scanner-bot (documented evidence) ----------
 
@@ -65,5 +68,5 @@ akash1xqhr3psnpnl4xqcausy4rjzay4lpecl9h3grwr    scanner-bot    2026-07    high-f
 
 # =====================================================================
 # End of file
-# 34 unknown + 3 scanner-bot = 37 total unique entries
+# 36 unknown + 3 scanner-bot = 39 total unique entries
 # =====================================================================
