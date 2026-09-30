@@ -12,7 +12,7 @@ This repo is the shared list — an abuse-intelligence resource that operators c
 
 ## // how the initial data was collected
 
-The 37 entries in `blacklist.txt` came from one production provider's live defense system between roughly December 2025 and July 2026. Two automated detection scripts fed the list:
+The 39 entries in `blacklist.txt` came from one production provider's live defense system between roughly December 2025 and September 2026. Two automated detection scripts fed the list:
 
 - **Pattern-based detection** — pod names and container images matched against known miner keywords (`xmrig`, `miner`, `monero`, and similar)
 - **Behavioural detection** — sustained CPU load on worker nodes, with tenant identified via `AKASH_OWNER` extracted from `/proc/PID/environ`
@@ -34,7 +34,7 @@ If you're deciding whether to trust the 34 unknowns: they were caught by the sam
 
 | File | What it is |
 |---|---|
-| [`blacklist.txt`](./blacklist.txt) | 37 tenant addresses with category, observation window, evidence |
+| [`blacklist.txt`](./blacklist.txt) | 39 tenant addresses with category, observation window, evidence |
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Evidence standards for community submissions |
 | [`.github/ISSUE_TEMPLATE/report-miner.md`](./.github/ISSUE_TEMPLATE/report-miner.md) | Structured template for reporting a new miner |
 
