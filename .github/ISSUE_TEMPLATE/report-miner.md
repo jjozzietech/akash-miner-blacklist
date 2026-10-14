@@ -48,7 +48,7 @@ One line summarizing what you observed. Examples:
 
 <!--
 The actual evidence. Log line, process listing, container image name,
-or bidding pattern observation.
+declared container command, or bidding pattern observation.
 
 REDACT before pasting:
 - Your provider wallet address
@@ -82,7 +82,8 @@ Choose one:
 
 <!-- Confirm each of these by replacing [ ] with [x] -->
 
-- [ ] I have personally observed this address exhibit miner behaviour
-- [ ] The evidence above is from my own observation, not hearsay
+- [ ] I have personally observed this on my own provider - either the workload
+      running, or the tenant's declared configuration for it
+- [ ] The evidence above is from my own logs or cluster state, not hearsay
 - [ ] I have redacted my own infrastructure detail from the pasted evidence
 - [ ] I have read CONTRIBUTING.md
