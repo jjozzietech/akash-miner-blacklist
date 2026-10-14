@@ -25,7 +25,7 @@ It tells you what these addresses did, with the evidence, so you can decide.
 
 ## // how the initial data was collected
 
-The 39 entries in `blacklist.txt` came from one production provider's live defense system between roughly December 2025 and September 2026. Two automated detection scripts fed the list:
+The first 39 entries in `blacklist.txt` came from one production provider's live defense system between roughly December 2025 and September 2026. Two automated detection scripts fed the list:
 
 - **Pattern-based detection** — pod names and container images matched against known miner keywords (`xmrig`, `miner`, `monero`, and similar)
 - **Behavioural detection** — sustained CPU load on worker nodes, with tenant identified via `AKASH_OWNER` extracted from `/proc/PID/environ`
@@ -39,7 +39,7 @@ The eviction log wasn't preserved across `/var/log/miner-eviction.log` rotations
 - **3 entries** have rich per-address evidence (the July 2026 scanner-bot batch, documented in operational session notes)
 - **36 entries** are marked `unknown` — genuinely, we don't have preserved per-address evidence beyond "our production defense caught them"
 
-This is deliberately honest rather than reverse-engineered. The 36 unknowns are real observations that our production scripts acted on; the evidence trail just wasn't retained. Community submissions going forward will land with proper per-entry provenance.
+This is deliberately honest rather than reverse-engineered. The 36 unknowns are real observations that our production scripts acted on; the evidence trail just wasn't retained. Community submissions land with full per-entry provenance, reviewed against `CONTRIBUTING.md` before merge — the first of these is [#3](https://github.com/jjozzietech/akash-miner-blacklist/issues/3).
 
 If you're deciding whether to trust the 36 unknowns: they were caught by the same scripts and thresholds we've published openly. If you run those scripts, you'd catch the same addresses. That's the whole argument for the data.
 
@@ -47,7 +47,7 @@ If you're deciding whether to trust the 36 unknowns: they were caught by the sam
 
 | File | What it is |
 |---|---|
-| [`blacklist.txt`](./blacklist.txt) | 39 tenant addresses with category, observation window, evidence |
+| [`blacklist.txt`](./blacklist.txt) | 40 tenant addresses with category, observation window, evidence |
 | [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Evidence standards for community submissions |
 | [`.github/ISSUE_TEMPLATE/report-miner.md`](./.github/ISSUE_TEMPLATE/report-miner.md) | Structured template for reporting a new miner |
 
@@ -63,8 +63,16 @@ Categories in use:
 
 - `scanner-bot` — high-frequency bidders that never win, likely scraping bid history or benchmarking
 - `unknown` — auto-detected by production scripts, per-entry evidence not preserved
-- `cpu-miner`, `gpu-miner` — not currently populated; reserved for community submissions with confirmed evidence
+- `cpu-miner`, `gpu-miner` — a mining workload of that class is established by the evidence: container image, pod name, or the tenant's declared container command
 - `other` — reserved for edge cases
+
+A category states **the workload class the evidence establishes, not whether it
+executed.** A deployment that declared a miner command but crash-looped before
+running it is still `cpu-miner`; the evidence column carries the execution
+status. The primary evidence forms in [`CONTRIBUTING.md`](./CONTRIBUTING.md) —
+container image name, named workload — are satisfiable by a pod that never
+started, so requiring successful execution would be a higher bar than the one
+published.
 
 ## // how to use
 

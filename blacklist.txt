@@ -12,10 +12,12 @@
 #                 entry where preserved; earlier entries predate log
 #                 retention, but all were caught by the same public
 #                 detection scripts operators can run themselves
-#   cpu-miner     reserved for community submissions with confirmed CPU
-#                 miner evidence
-#   gpu-miner     reserved for community submissions with confirmed GPU
-#                 miner evidence
+#   cpu-miner     CPU mining workload established by the evidence: container
+#                 image, pod name, or the tenant's declared container command.
+#                 The category states the workload class the evidence
+#                 establishes, not whether it executed. Execution status is
+#                 stated in the evidence column
+#   gpu-miner     GPU mining workload, same standard as cpu-miner
 #   other         reserved for edge cases (DoS floods, etc.)
 #
 # See README.md for provenance quality disclosure and how to contribute.
@@ -66,7 +68,12 @@ akash14n4rkmz64rn0tey0r5g07l8q5x0fh2h4hu44kt    scanner-bot    2026-07    audito
 akash1ru388sahwp04cayg6vpr7vmu7354uc0t45swuu    scanner-bot    2026-07    high-cap CPU scanner, 22 bids/day, never won
 akash1xqhr3psnpnl4xqcausy4rjzay4lpecl9h3grwr    scanner-bot    2026-07    high-freq 8CPU/8GB/10GB benchmark bidder, 32 bids/day, never won
 
+# ---------- cpu-miner (community submissions) ----------
+
+# Reported-by: RHITE (GitHub @RHITE) - issue #3
+akash1cktfh02v7shd9a89apaegw560h7z6zdne98lw0    cpu-miner    2026-10    seine v0.2.15 miner command in deploy spec, --threads 4, did not execute
+
 # =====================================================================
 # End of file
-# 36 unknown + 3 scanner-bot = 39 total unique entries
+# 36 unknown + 3 scanner-bot + 1 cpu-miner = 40 total unique entries
 # =====================================================================

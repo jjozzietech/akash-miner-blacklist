@@ -29,6 +29,7 @@ You need at least one of the following, and the more the better:
 - **Process listing on the worker node** — `ps aux` or equivalent showing the miner process with sustained high CPU. Ideally with the `AKASH_OWNER` environment variable extracted from `/proc/PID/environ` linking the process to the tenant address.
 - **Container image name** — the pod's container image contains an unambiguous miner tag (e.g. `xmrig`, `nbminer`, `t-rex`, `phoenixminer`, `lolminer`).
 - **Named workload** — the pod name itself contains a miner keyword (`miner`, `xmrig`, `monero`, and similar).
+- **Declared container command** — the tenant's own `command`/`args` array naming a miner binary, a stratum pool endpoint, or mining flags, taken from the deployment or pod spec. Sufficient whether or not the command executed successfully; a malformed command that crash-looped still evidences the workload class.
 
 ### Supporting evidence (strengthens a submission)
 
