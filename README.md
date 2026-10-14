@@ -6,9 +6,22 @@ Sanitized from a production `au-syd` provider's live blacklist. Real observation
 
 ## // why this exists
 
-Miner tenants burn compute, evict legitimate deployments, drain provider wallets via gas, and waste capacity for no ecosystem benefit. Every provider defends against them independently, catches roughly the same addresses, and rediscovers the same patterns.
+Mining is not prohibited on Akash. Whether a given workload is acceptable is a
+per-provider decision, set by each operator's acceptable use policy. Most
+providers that disallow it do so for capacity reasons rather than principle:
+miner workloads tend to saturate every core they are given, which degrades
+co-tenant deployments sharing the node.
 
-This repo is the shared list — an abuse-intelligence resource that operators can pull from and contribute to. Nothing here replaces per-provider defense (see the [companion scripts](https://github.com/jjozzietech/akash-provider-ops-public/tree/main/anti-mining) for that). This is the *data layer* the scripts consume.
+What this list records is observation, not judgment — tenant addresses seen
+running workloads a provider's AUP did not permit, plus high-frequency bidders
+that impose gas cost without ever taking a lease. Every provider rediscovers the
+same addresses independently. There is no reason for that to be independent work.
+
+This repo is the shared data layer. Operators pull from it and contribute to it.
+It does not replace per-provider defense (see the
+[companion scripts](https://github.com/jjozzietech/akash-provider-ops-public/tree/main/anti-mining)
+for that), and it does not tell you what your acceptable use policy should be.
+It tells you what these addresses did, with the evidence, so you can decide.
 
 ## // how the initial data was collected
 
@@ -24,11 +37,11 @@ Both scripts auto-appended matching tenants to the blacklist. See [`akash-provid
 The eviction log wasn't preserved across `/var/log/miner-eviction.log` rotations. As a result:
 
 - **3 entries** have rich per-address evidence (the July 2026 scanner-bot batch, documented in operational session notes)
-- **34 entries** are marked `unknown` — genuinely, we don't have preserved per-address evidence beyond "our production defense caught them"
+- **36 entries** are marked `unknown` — genuinely, we don't have preserved per-address evidence beyond "our production defense caught them"
 
-This is deliberately honest rather than reverse-engineered. The 34 unknowns are real observations that our production scripts acted on; the evidence trail just wasn't retained. Community submissions going forward will land with proper per-entry provenance.
+This is deliberately honest rather than reverse-engineered. The 36 unknowns are real observations that our production scripts acted on; the evidence trail just wasn't retained. Community submissions going forward will land with proper per-entry provenance.
 
-If you're deciding whether to trust the 34 unknowns: they were caught by the same scripts and thresholds we've published openly. If you run those scripts, you'd catch the same addresses. That's the whole argument for the data.
+If you're deciding whether to trust the 36 unknowns: they were caught by the same scripts and thresholds we've published openly. If you run those scripts, you'd catch the same addresses. That's the whole argument for the data.
 
 ## // what's in here
 
