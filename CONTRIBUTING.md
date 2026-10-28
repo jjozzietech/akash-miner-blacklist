@@ -14,8 +14,10 @@ So: don't submit an address unless you can back it up.
 
 1. Open a new issue using the [report-miner template](.github/ISSUE_TEMPLATE/report-miner.md)
 2. Fill in every field the template asks for
-3. Wait for maintainer review — usually within 72 hours
+3. Wait for maintainer review — within 7 days
 4. Maintainer either accepts (and lands a PR adding the address) or asks clarifying questions
+
+**On timing.** This list is maintained in a weekly window rather than continuously, so seven days is the real ceiling. In practice it is often much faster, but the number above is the one you can rely on.
 
 Do not open a PR directly against `blacklist.txt`. Submit via issue first so evidence is reviewed before the data lands.
 
@@ -112,4 +114,4 @@ Contributors are credited in the entry itself via a `Reported-by:` comment adjac
 
 ## Questions
 
-Open an issue titled `[question] ...` for anything not covered here. Maintainer responds within roughly 72 hours.
+Open an issue titled `[question] ...` for anything not covered here. Maintainer responds within 7 days.
